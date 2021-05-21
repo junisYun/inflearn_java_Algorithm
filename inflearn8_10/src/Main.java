@@ -13,21 +13,20 @@ public class Main {
             }
         }
         maze[0][0] = 1;
-        solution(0, 0);
+        dfs(0, 0);
         System.out.println(answer);
     }
-
-    public static void solution(int x, int y) {
+    public static void dfs(int x, int y) {
         if(x == 6 && y == 6) {
             answer++;
         } else {
             for(int i = 0; i < 4; i++) {
                 int nx = x + dx[i];
                 int ny = y + dy[i];
-                if(nx >= 0 && nx < 7 && ny >=0 && ny < 7) {
-                    if(maze[nx][ny] == 0) {
+                if(nx >= 0 && nx < 7 && ny >= 0 && ny < 7) {
+                    if (maze[nx][ny] == 0) {
                         maze[nx][ny] = 1;
-                        solution(nx, ny);
+                        dfs(nx, ny);
                         maze[nx][ny] = 0;
                     }
                 }
