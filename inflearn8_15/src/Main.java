@@ -23,13 +23,9 @@ public class Main {
         town = new int[N][N];
         for(int i = 0; i < N; i++) {
             for(int j = 0; j < N; j++) {
-                town[i][j] = sc.nextInt();
-                if(town[i][j] == 1) {
-                    house.add(new Pos(i, j));
-                }
-                else if(town[i][j] == 2) {
-                    pizza.add(new Pos(i, j));
-                }
+                int tmp = sc.nextInt();
+                if(tmp == 1) house.add(new Pos(i, j));
+                else if(tmp == 2) pizza.add(new Pos(i, j));
             }
         }
         len = pizza.size();
