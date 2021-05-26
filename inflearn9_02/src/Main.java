@@ -8,6 +8,7 @@ class Class implements Comparable<Class>{
         this.start = start;
         this.end = end;
     }
+    @Override
     public int compareTo(Class o) {
         if(this.end == o.end) return this.start - o.start;
         else return this.end - o.end;
